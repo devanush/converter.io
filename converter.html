@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	
+	<h2>Text Converter</h2>
+	<h3>Convert to:</h3>
+	<div>
+		
+	<input type="radio" name="type" value="ASCII">
+	<label>ASCII</label> </br>
+	<input type="radio" name="type" value="Binary">
+	<label> Binary</label> </br>
+	<input type="radio" name="type" value=" Hex">
+	<label> Hex</label> </br>
+	<input type="radio" name="type" value="Octal">
+	<label> Octal</label></br>
+	<input type="radio" name="type" value="BinToDec"> 
+<label> Bin to Dec</label></br>
+<input type="radio" name="type" value="OctToDec"> 
+<label> Oct to Dec</label></br>
+<input type="radio" name="type" value="HexToDec"> 
+<label> Hex to Dec</label></br>
+	<input type="radio" name="type" value="Uppercases"> 
+<label> Uppercases</label></br>
+	<input type="radio" name="type" value="Lowercase"> 
+<label> Lowercase</label></br>
+	<input type="radio" name="type" value="Reverse"> 
+<label> Reverse</label></br>
+
+	</div></br>
+	<input id="t" type="text" name="text" placeholder="Text">
+	<button onclick=check()>convert</button>
+	<br><br><br>
+	<footer align="center">&copy;Naidu 2020</footer>
+<style type="text/css">
+	body{
+		margin-left: 10px;
+		background-color: #004040;
+		color:white;
+	}
+	h2{
+		text-align: center;
+		color:blue;
+		font-size: 40px;
+	}
+	input{
+		margin-top: 10px;
+	}
+
+</style>
+<script type="text/javascript">
+	function check(){
+		var a=document.getElementsByName("type");
+		var b=document.getElementById("t");
+		if(a[0].checked){
+
+			alert(b.value.charCodeAt(0));
+			}
+			else if(a[1].checked){
+			//	alert((b.value).charCodeAt(0).toString(2));
+			alert(Number(b.value).toString(2));
+			}
+			else if(a[2].checked){
+				alert(Number(b.value).toString(16));
+			}
+			else if(a[3].checked){
+			alert(Number(b.value).toString(8));
+		}
+			else if(a[4].checked){
+				alert(Number.parseInt(b.value,2));
+			}
+			else if(a[5].checked){
+				alert(Number.parseInt(b.value,8));
+			}
+			else if(a[6].checked){
+				alert(Number.parseInt(b.value,16));
+			}
+			else if(a[7].checked){
+				alert(b.value.toUpperCase());
+				
+			}
+			else if(a[8].checked){
+					alert(b.value.toLowerCase())
+					
+				}
+				else if(a[9].checked){
+					alert((((b.value).split("")).reverse()).join(''));
+							}
+			else {
+				alert("non");		
+			}
+
+	}
+</script>
+</body>
+</html>
